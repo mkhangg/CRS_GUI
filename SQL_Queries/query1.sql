@@ -1,0 +1,10 @@
+ALTER TABLE RENTAL
+ADD Return INTEGER;
+
+UPDATE RENTAL
+SET Return = 1
+WHERE PaymentDate <> 'NULL';
+
+UPDATE RENTAL
+SET Return = 0
+WHERE PaymentDate == 'NULL';
